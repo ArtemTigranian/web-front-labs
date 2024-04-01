@@ -1,20 +1,21 @@
 body {
-    background-color: lightblue;
-    color: maroon;
+    background-color: rgb(243, 232, 238);
+    color: rgb(46, 44, 47);
     font-family: Arial;
     margin: 0px;
 }
 
 footer,header{
-    background-color: black;
-    color: lightgreen;
+    background-color: rgb(186, 205, 176);
+    color: rgb(46, 44, 47);
     padding: 10px;
     font-size: 16pt;
 }
 
 main {
-    background-color: lightblue;
-    color: maroon;
+    background-color: rgb(114, 155, 121);
+    color: rgb(46, 44, 47);
+    font-size:18pt;
 }
 
 a {
