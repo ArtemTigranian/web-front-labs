@@ -2,14 +2,25 @@ body {
     background-color: rgb(243, 232, 238);
     color: rgb(46, 44, 47);
     font-family: Arial;
-    margin: 0px;
+    margin: 0px 0px 67px;
 }
 
-footer,header{
+header{
     background-color: rgb(186, 205, 176);
     color: rgb(46, 44, 47);
     padding: 10px;
     font-size: 16pt;
+}
+
+footer{
+    background-color: rgb(186, 205, 176);
+    color: rgb(46, 44, 47);
+    padding: 10px;
+    font-size: 16pt;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
 }
 
 main {
