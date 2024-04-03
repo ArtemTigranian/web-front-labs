@@ -19,6 +19,36 @@
             alert('Сумма ' + a + ' и ' + b + ' равна ' + result);
         }
 
+        function showRazn(){
+            let inputA = document.getElementById('numA');
+            let inputB = document.getElementById('numB');
+
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a - b;
+            alert('Разность ' + a + ' и ' + b + ' равна ' + result);
+        }
+
+        function showUmn(){
+            let inputA = document.getElementById('numA');
+            let inputB = document.getElementById('numB');
+
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a * b;
+            alert('Произведение ' + a + ' и ' + b + ' равна ' + result);
+        }
+
+        function showDel(){
+            let inputA = document.getElementById('numA');
+            let inputB = document.getElementById('numB');
+
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a / b;
+            alert('Деление ' + a + ' и ' + b + ' равна ' + result);
+        }
+
         function showAuthor(){
             let author = 'Автор страницы: \nТигранян Артём Паруйрович';
             alert(author);
@@ -31,10 +61,13 @@
     </script>
     <style>
         .message{
+            vertical-align: top;
+            margin-top: 10px;
             cursor: pointer;
             text-align: center;
             display: inline-block;
             width: 250px;
+            height: 60px;
             border: 3px solid green;
             background-color: white;
         }
@@ -57,6 +90,9 @@
         <label>Первое число: <input type="number" value="5154" id="numA"></label><br>
         <label>Второе число: <input type="number" value="7891" id="numB"></label><br>
         <div class="message" onclick="showSum()">Найти сумму чисел</div>
+        <div class="message" onclick="showRazn()">Найти разность чисел</div>
+        <div class="message" onclick="showUmn()">Найти произведение чисел</div>
+        <div class="message" onclick="showDel()">Найти деление чисел</div>
         <div class="message" onclick="showAuthor()">Узнать, кто автор страницы</div>
     </main>
 
