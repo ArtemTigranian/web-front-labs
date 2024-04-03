@@ -15,6 +15,16 @@
             let result = a + b;
             alert('Сумма ' + a + ' и ' + b + ' равна ' + result);
         }
+
+        function showAuthor(){
+            let author = 'Автор страницы: \nТигранян Артём Паруйрович';
+            alert(author);
+        }
+
+        function showGreetings(){
+            let greeting = 'Приветствую вас на моей странице!';
+            alert(greeting);
+        }
     </script>
     <style>
         .message{
@@ -25,19 +35,27 @@
             border: 3px solid green;
             background-color: white;
         }
+
+        header{
+            cursor: pointer;
+        }
+
+        footer{
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
-    <header>
+    <header onclick="showAuthor()">
         НГТУ, ФБ, Лабораторная 5
     </header>
 
     <main>
         <div class="message" onclick="showSum()">Сколько будет 5154+7891?</div>
-        <div class="message">Узнать, кто автор страницы</div>
+        <div class="message" onclick="showAuthor()">Узнать, кто автор страницы</div>
     </main>
 
-    <footer>
+    <footer ondblclick="showGreetings()">
         &copy; Артём Тигранян, ФБИ-21, 2 курс, 2024
     </footer>
 </body>
