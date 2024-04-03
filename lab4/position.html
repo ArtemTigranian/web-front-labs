@@ -17,13 +17,19 @@
             background-color: white;
             border: 1px dotted darkgreen;
             margin: 15px;
+            position: relative;
+            z-index: 1;
         }
 
         .position-relative {
             position: relative;
             left: 150px;
             top: -130px;
-            z-index: -1;
+            z-index: 0;
+        }
+
+        .position-relative:hover{
+            z-index: 2;
         }
 
         .position-absolute {
@@ -38,6 +44,10 @@
             transition: 0.4s;
             background-color: pink;
             box-shadow: 0 0 15px;
+        }
+
+        footer{
+            z-index: 10;
         }
     </style>
 </head>
