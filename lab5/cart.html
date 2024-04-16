@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тигранян Артём Паруйрович. Лабораторная 5.</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../favicon-16x16.png">
+    <link rel="shortcut icon" href="../favicon-32x32.png">
+    <script>
+        function Itog(){
+            let inpNaush = document.getElementById('naush');
+            let inpMysh = document.getElementById('mysh');
+            let inpCam = document.getElementById('cam');
+            let inpMonitor = document.getElementById('monitor');
+            let inpKlava = document.getElementById('klava');
+
+            let naush = parseInt(inpNaush.value);
+            let mysh = parseInt(inpMysh.value);
+            let cam = parseInt(inpCam.value);
+            let monitor = parseInt(inpMonitor.value);
+            let klava = parseInt(inpKlava.value);
+
+            let result = naush*5500 + mysh*1000 + cam*6000 + monitor*2000 + klava*5700;
+
+            let output = document.getElementById('output');
+            output.innerHTML = 'Итого: ' + result;
+        }
+
+        function clearFields(){
+            document.getElementById('naush').value = '';
+            document.getElementById('mysh').value = '';
+            document.getElementById('cam').value = '';
+            document.getElementById('monitor').value = '';
+            document.getElementById('klava').value = '';
+            document.getElementById('output').innerHTML = '';
+        }
+    </script>
+    <style>
+        .ramka{
+            width: 400px;
+            height: 600px;
+            border: 5px solid;
+            border-radius: 25px;
+            background-color: white;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .product{
+            padding-left: 30px;
+            padding-bottom: 25px;
+        }
+
+        .buttons{
+            padding-left: 30px;
+            margin-right: 30px;
+            display: inline;
+        }
+        
+        h2{
+            text-align: center;
+        }
+
+        .itog{
+            margin-left: 230px;
+            /* border: solid 3px red; */
+            width: 150px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная 5
+    </header>
+
+    <main>
+        <div class="ramka">
+            <h2>Корзина товаров</h2>
+            <div class="product">
+                <label>
+                    Наушники (5500р/шт):
+                    <input type="number" placeholder="Введите количество" min="0" id="naush">
+                </label>
+            </div>
+            
+            <div class="product">
+                <label>
+                    Мышь (1000р/шт):
+                    <input type="number" placeholder="Введите количество" min="0" id="mysh">
+                </label>
+            </div>
+
+            <div class="product">
+                <label>
+                    Веб-камера (6000р/шт):
+                    <input type="number" placeholder="Введите количество" min="0" id="cam">
+                </label>
+            </div>
+
+            <div class="product">
+                <label>
+                    Монитор (2000р/шт):
+                    <input type="number" placeholder="Введите количество" min="0" id="monitor">
+                </label>
+            </div>
+
+            <div class="product">
+                <label>
+                    Клавиатура (5700р/шт):
+                    <input type="number" placeholder="Введите количество" min="0" id="klava">
+                </label>
+            </div>
+
+            <div class="buttons">
+                <input type="button" value="Рассчитать" onclick="Itog()">
+                <input type="button" value="Очистить" onclick="clearFields()">
+            </div>
+
+            <div class="itog" id="output"></div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; Артём Тигранян, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>
