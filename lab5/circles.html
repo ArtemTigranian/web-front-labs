@@ -9,49 +9,19 @@
     <link rel="shortcut icon" href="../favicon-16x16.png">
     <link rel="shortcut icon" href="../favicon-32x32.png">
     <script>
-        function changeOutput1(){
-            let output = document.getElementById('output1');
-            output.style.opacity = 0
+        function Remove(circle) {
+            circle.style.opacity = '0';
         }
-        function changeOutput2(){
-            let output = document.getElementById('output2');
-            output.style.opacity = 0
+
+        function Return() {
+            document.querySelectorAll('.circle').forEach(function(circle) {
+                circle.style.opacity = '1';
+        });
         }
-        function changeOutput3(){
-            let output = document.getElementById('output3');
-            output.style.opacity = 0
-        }
-        function changeOutput4(){
-            let output = document.getElementById('output4');
-            output.style.opacity = 0
-        }
-        function changeOutput5(){
-            let output = document.getElementById('output5');
-            output.style.opacity = 0
-        }
-        function changeOutput6(){
-            let output = document.getElementById('output6');
-            output.style.opacity = 0
-        }
-        function changeOutput7(){
-            let output = document.getElementById('output7');
-            output.style.opacity = 0
-        }
-        function changeOutput8(){
-            let output = document.getElementById('output8');
-            output.style.opacity = 0
-        }
-        function changeOutput9(){
-            let output = document.getElementById('output9');
-            output.style.opacity = 0
-        }
-        function changeOutput10(){
-            let output = document.getElementById('output10');
-            output.style.opacity = 0
-        }
+
     </script>
     <style>
-        div{
+        .circle{
             border-radius: 100%;
             border: solid 3px;
             width: 100px;
@@ -122,16 +92,17 @@
     </header>
 
     <main>
-        <div class="b1" id="output1" onclick="changeOutput1()">1</div>
-        <div class="b2" id="output2" onclick="changeOutput2()">2</div>
-        <div class="b3" id="output3" onclick="changeOutput3()">3</div>
-        <div class="b4" id="output4" onclick="changeOutput4()">4</div>
-        <div class="b5" id="output5" onclick="changeOutput5()">5</div>
-        <div class="b6" id="output6" onclick="changeOutput6()">6</div>
-        <div class="b7" id="output7" onclick="changeOutput7()">7</div>
-        <div class="b8" id="output8" onclick="changeOutput8()">8</div>
-        <div class="b9" id="output9" onclick="changeOutput9()">9</div>
-        <div class="b10" id="output10" onclick="changeOutput10()">10</div>
+        <div class="circle b1" id="output1" onclick="Remove(this)">1</div>
+        <div class="circle b2" id="output2" onclick="Remove(this)">2</div>
+        <div class="circle b3" id="output3" onclick="Remove(this)">3</div>
+        <div class="circle b4" id="output4" onclick="Remove(this)">4</div>
+        <div class="circle b5" id="output5" onclick="Remove(this)">5</div>
+        <div class="circle b6" id="output6" onclick="Remove(this)">6</div>
+        <div class="circle b7" id="output7" onclick="Remove(this)">7</div>
+        <div class="circle b8" id="output8" onclick="Remove(this)">8</div>
+        <div class="circle b9" id="output9" onclick="Remove(this)">9</div>
+        <div class="circle b10" id="output10" onclick="Remove(this)">10</div>
+        <input type="button" value="Вернуть" onclick="Return()">
     </main>
 
     <footer>
