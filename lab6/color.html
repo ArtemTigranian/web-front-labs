@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тигранян Артём Паруйрович. Лабораторная 6.</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../favicon-16x16.png">
+    <link rel="shortcut icon" href="../favicon-32x32.png">
+    <script>
+        function changeColor(div){
+            if(div.style.backgroundColor = 'yellow'){
+                div.style.backgroundColor = 'red'
+                div.style.color = 'pink';
+                document.getElementById('color-name').innerHTML = 'красный'
+            }
+            else if(div.style.backgroundColor = 'red'){
+                div.style.backgroundColor = 'green'
+                div.style.color = 'blue';
+                document.getElementById('color-name').innerHTML = 'зеленый'
+            }
+            else if(div.style.backgroundColor = 'green'){
+                div.style.backgroundColor = 'blue'
+                div.style.color = 'black';
+                document.getElementById('color-name').innerHTML = 'синий'
+            }
+            else if(div.style.backgroundColor = 'blue'){
+                div.style.backgroundColor = 'pink'
+                div.style.color = 'grey';
+                document.getElementById('color-name').innerHTML = 'розовый'
+            }
+            else if(div.style.backgroundColor = 'pink'){
+                div.style.backgroundColor = 'brown'
+                div.style.color = 'red';
+                document.getElementById('color-name').innerHTML = 'коричневый'
+            }
+            else{
+                div.style.backgroundColor = 'yellow'
+                document.getElementById('color-name').innerHTML = 'желтый'
+            }
+        }
+    </script>
+    <style>
+        .block{
+            padding: 10px;
+            border: solid 2px;
+            width: 300px;
+            background-color: yellow;
+            text-align: center;
+            transition: 1s;
+            cursor: grab;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная 6
+    </header>
+
+    <main>
+        <div class="block" ondblclick="changeColor(this)">
+            Цвет: <span id="color-name">желтый</span><br>
+            Сделайте двойной щелчок чтобы изменить
+        </div>
+    </main>
+
+    <footer>
+        &copy; Артём Тигранян, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>
