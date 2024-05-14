@@ -56,6 +56,17 @@
             document.getElementById('user-number').value = ''
             number = Math.floor(Math.random() * 100) + 1;
         }
+
+        function openRules(){
+            let screens = document.getElementsByClassName('rules');
+            screens[0].style.display = 'none';
+            screens[1].style.display = 'block';
+        }
+        function closeRules(){
+            let screens = document.getElementsByClassName('rules');
+            screens[1].style.display = 'none';
+            screens[0].style.display = 'block';
+        }
     </script>
     <style>
         .game{
@@ -75,6 +86,8 @@
             background-color: rgba(255, 255, 255, 0.414);
             width: 500px;
             padding-bottom: 8px;
+            padding-left: 15px;
+            font-size: 15pt;
         }
     </style>
 </head>
@@ -114,9 +127,25 @@
         </div>
 
         <div class="rules">
-            <button onclick="startGame()">
+            <button onclick="openRules()">
                 Показать правила
             </button>
+        </div>
+
+        <div class="rules" style="display: none;">
+            <button onclick="closeRules()">
+                Скрыть правила
+            </button>
+            <ol type="I">
+                <li>Нажмите кнопку "Сыграть в игру".</li>
+                <li>Задумано число от 1 до 100.</li>
+                <li>Ваша задача eгадать задуманное число.</li>
+                <li>Используйте поле ввода для угадывания.</li>
+                <li>Получите подсказку, если число больше или меньше задуманного.</li>
+                <li>Следите за количеством своих попыток.</li>
+                <li>Определите правильное число и выиграйте.</li>
+                <li>Нажмите "Сыграть еще раз" для новой игры.</li>
+            </ol>
         </div>
     </main>
 
