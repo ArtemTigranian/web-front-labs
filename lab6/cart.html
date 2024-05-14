@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тигранян Артём Паруйрович. Лабораторная 6.</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../favicon-16x16.png">
+    <link rel="shortcut icon" href="../favicon-32x32.png">
+    <script>
+        function Itog(){
+            let itog = document.getElementById('itog');
+            let result = document.getElementById('result');
+
+            let balance = document.getElementById('balance').value;
+            let inpres = document.getElementById('res');
+            let inptrans = document.getElementById('trans');
+            let inpkond = document.getElementById('kond');
+            let inptransform = document.getElementById('transform');
+            let inpsemi = document.getElementById('semi');
+            let inptiri = document.getElementById('tiri');
+            let inppoz = document.getElementById('poz');
+            let inpstab = document.getElementById('stab');
+
+            let res = parseInt(inpres.value);
+            let trans = parseInt(inptrans.value);
+            let kond = parseInt(inpkond.value);
+            let transform = parseInt(inptransform.value);
+            let semi = parseInt(inpsemi.value);
+            let tiri = parseInt(inptiri.value);
+            let poz = parseInt(inppoz.value);
+            let stab = parseInt(inpstab.value);
+
+            let summa = res*2 + trans*10 + kond*50 + transform*200 + semi*60 + tiri*65 + poz*58 + stab*5;
+            
+            if (res < 0 || trans < 0 || kond < 0 || transform < 0 || semi < 0 || tiri < 0 || poz < 0 || stab < 0) {
+                document.getElementById('result').innerHTML = 'Кол-во не может быть меньше 0';
+            }
+
+            else if (inpres.value == "" && inptrans.value == "" && inpkond.value == "" && inptransform.value == "" && inpsemi.value == "" && inptiri.value == "" && inppoz.value == "" && inpstab.value == "") {
+                document.getElementById('result').innerHTML = 'Выберите хотя бы один товар';
+            }
+
+            else if (balance < summa) {
+                empty = false
+                document.getElementById('result').innerHTML = 'Итого: ' + summa + ' р. У вас недостаточно денег!';
+            
+            }
+
+            else {
+                empty = false
+                document.getElementById('result').innerHTML = 'Покупка успешно оформлена на сумму: ' + summa + ' р.';
+            }
+        }
+    </script>
+    <style>
+        div{
+            text-align: center;
+        }
+        .balance{
+            padding: 10px;
+            text-align: center;
+        }
+        table{
+            background-color: lightblue;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        td{
+            padding: 4px;
+        }
+        button{
+            font-size: 20pt;
+        }
+        .button{
+            margin-top: 20px;
+            width: 54px;
+            height: 50px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная 6
+    </header>
+
+    <main>
+        <div class="balance">
+            Мой баланс: <input type="number" placeholder="Введите ваш баланс" min="0" id="balance">
+        </div>
+        <div class="cart">
+            <table border="1">
+                <tr>
+                    <td></td>
+                    <td>Название</td>
+                    <td>Цена</td>
+                    <td>Количество</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Резистор</td>
+                    <td>2 р</td>
+                    <td><input type="number" placeholder="Введите количество" id="res"></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Транзистор</td>
+                    <td>10 р</td>
+                    <td><input type="number" placeholder="Введите количество" id="trans"></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Конденсатор</td>
+                    <td>50 р</td>
+                    <td><input type="number" placeholder="Введите количество" id="kond"></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Трансформатор</td>
+                    <td>200 р</td>
+                    <td><input type="number" placeholder="Введите количество" id="transform"></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Семистор</td>
+                    <td>60 р</td>
+                    <td><input type="number" placeholder="Введите количество" id="semi"></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Тиристор</td>
+                    <td>65 р</td>
+                    <td><input type="number" placeholder="Введите количество" id="tiri"></td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Позистор</td>
+                    <td>58 р</td>
+                    <td><input type="number" placeholder="Введите количество" id="poz"></td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Стабилитрон</td>
+                    <td>5 р</td>
+                    <td><input type="number" placeholder="Введите количество" id="stab"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="button"><button onclick="Itog()">OK</button></div>
+        <div id="result"></div>
+    </main>
+
+    <footer>
+        &copy; Артём Тигранян, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>
