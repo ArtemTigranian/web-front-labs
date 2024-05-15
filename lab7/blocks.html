@@ -19,6 +19,74 @@
 
             document.querySelector('main').appendChild(newBlock);
         }
+
+        function addNewBlocks(){
+            let main = document.querySelector('main')
+            for (let i = 0; i<10; i++){
+                let newBlock = document.createElement('div');
+                newBlock.style.backgroundColor = "green";
+                newBlock.style.height = "40px";
+                newBlock.style.width = "400px";
+                newBlock.style.border = "5px solid"; 
+                newBlock.style.margin = "5px"; 
+                main.appendChild(newBlock);
+                newBlock.innerHTML = `Блок № ${i+1}: 2*${i} <sup>2</sup> = ${2*i**2}`;
+            }
+        }
+
+        function add20_50(){
+            let main = document.querySelector('main')
+            for (let i = 20; i<=50; i+=2.5) {
+                let newBlock = document.createElement('div');
+                newBlock.style.backgroundColor = "red";
+                newBlock.style.height = "40";
+                newBlock.style.border = "2px solid "; 
+                newBlock.style.margin = "5px"; 
+                newBlock.style.padding = "5px"; 
+                newBlock.style.width = "50px";
+                newBlock.style.textAlign = 'center'
+                newBlock.style.color = 'pink'
+                newBlock.innerText = i;
+
+                main.appendChild(newBlock);
+            }
+        }
+        function add10_80() {
+            let main = document.querySelector('main')
+            for (let i = 10; i >= -80; i -= 3) {
+                let circ = document.createElement('div');
+                circ.style.backgroundColor = 'yellow';
+                circ.style.color = 'brown'
+                circ.style.height = '20px';
+                circ.style.width = '20px';
+                circ.style.border = '2px solid';
+                circ.style.borderRadius = '100%'; 
+                circ.style.margin = '10px'; 
+                circ.style.padding = '5px'; 
+                circ.style.display = 'inline-block';
+                circ.style.textAlign = 'center';
+                circ.style.fontSize = '12pt'
+                circ.innerText = i;
+
+                main.appendChild(circ);
+            }
+        }
+        function add10(){
+            let main = document.querySelector('main');
+            for (let i = 0; i <= 10; i++) {
+                let newBlockopacity = document.createElement('div');
+                newBlockopacity.style.backgroundColor = "green";
+                newBlockopacity.style.height = "40px";
+                newBlockopacity.style.width = "40px";
+                newBlockopacity.style.border = "3px solid "; 
+                newBlockopacity.style.margin = "10px"; 
+                newBlockopacity.style.padding = "5px"; 
+                newBlockopacity.style.opacity = i * 0.1;
+                newBlockopacity.innerText = i;
+
+                main.appendChild(newBlockopacity);
+            }
+        }
     </script>
 </head>
 <body>
@@ -28,6 +96,10 @@
 
     <main>
         <button onclick="addNewBlock()">Добавить блок</button>
+        <button onclick="addNewBlocks()">Добавить несколько блоков</button>
+        <button onclick="add20_50()">20 => 50</button>
+        <button onclick="add10_80()">10 => -80</button>
+        <button onclick="add10()">10 блоков</button>
     </main>
 
     <footer>
