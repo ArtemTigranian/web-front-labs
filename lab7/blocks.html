@@ -87,6 +87,30 @@
                 main.appendChild(newBlockopacity);
             }
         }
+        function Circles(){
+            let main = document.querySelector('main');
+            const count = parseInt(document.getElementById('input').value);
+            for (let i = count; i > 0; i--) {
+                let newCircle = document.createElement('div');
+                newCircle.style.height = "20px";
+                newCircle.style.border = "3px solid";
+                newCircle.style.borderRadius = "100%"; 
+                newCircle.style.margin = "15px"; 
+                newCircle.style.padding = "5px"; 
+                newCircle.style.width = "20px";
+                newCircle.style.color = "white";
+                newCircle.style.display = "inline-block";
+                newCircle.style.textAlign = "center";
+                newCircle.innerText = i;
+                if(i % 2 === 0) {
+                    newCircle.style.backgroundColor = "orange";
+                }
+                else {
+                    newCircle.style.backgroundColor = "blue"
+                }
+                main.appendChild(newCircle);
+            }
+        }
     </script>
 </head>
 <body>
@@ -100,6 +124,9 @@
         <button onclick="add20_50()">20 => 50</button>
         <button onclick="add10_80()">10 => -80</button>
         <button onclick="add10()">10 блоков</button>
+        <input type="number" id="input" min = "0" placeholder="Введите количество">
+        <button onclick="Circles()">10 блоков</button>
+
     </main>
 
     <footer>
