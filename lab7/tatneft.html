@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тигранян Артём Паруйрович. Лабораторная 7.</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../favicon-16x16.png">
+    <link rel="shortcut icon" href="../favicon-32x32.png">
+    <script>
+        function Kurs(){
+            
+            const date = [
+                '29.04.2024', '30.04.2024', '02.05.2024', '03.05.2024', '06.05.2024',
+                '07.05.2024', '08.05.2024', '10.05.2024', '13.05.2024', '14.05.2024'
+            ];
+            const cena = [
+                720.90, 719.00, 719.30, 718.00, 717.90,
+                720.40, 721.80, 727.90, 730.30, 731.30
+            ];
+            let table = document.getElementById('kurs-table');
+            let sum = 0;
+            let max = Math.max(...cena);
+            let min = Math.min(...cena);
+
+            for (i = 0; i<cena.length; i++){
+                let tr = document.createElement('tr');
+                let Date = document.createElement('td');
+                let Price = document.createElement('td');
+                let Diff = document.createElement('td');
+
+                Date.innerHTML = date[i];
+                Price.innerHTML = cena[i];
+
+                if (i === 0){
+                    Diff.innerHTML = '-';
+                }
+                else {
+                    let razn = (cena[i] - cena[i-1]).toFixed(2);
+                    Diff.innerHTML = razn;
+                }
+                tr.appendChild(Date);
+                tr.appendChild(Price);
+                tr.appendChild(Diff);
+                table.appendChild(tr);
+
+                sum += cena[i];
+            }
+            let ave = (sum / cena.length).toFixed(1);
+            document.getElementById('itog').innerHTML = `
+                Среднее значение: ${ave} <br>
+                Максимальное значение: ${max} <br>
+                Минимальное значение: ${min} `;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная 7
+    </header>
+
+    <main>
+        <button onclick="Kurs()">Курс акций "Татнефть"</button>
+        <table border="1" id="kurs-table"></table>
+        <div id = itog></div>
+    </main>
+
+    <footer>
+        &copy; Артём Тигранян, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>
