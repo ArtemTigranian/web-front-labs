@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>	АО "РЕГИОН ЭсМ"</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon-16x16.png">
+    <link rel="shortcut icon" href="favicon-32x32.png">
+    <script>
+        let exchangeRate;
+
+        async function getExchangeRate() {
+            const response = await fetch('https://www.cbr-xml-daily.ru/daily_json.js');
+            const data = await response.json();
+            exchangeRate = data.Valute.KGS.Value;
+            document.getElementById('exchangeRate').innerText = `Текущий курс: 1 KGS = ${exchangeRate} RUB`;
+        }
+
+        function convertToKGS() {
+            const rubAmount = document.getElementById('rubAmount').value;
+            const kgsAmount = (rubAmount / exchangeRate).toFixed(2);
+            document.getElementById('kgsAmount').value = kgsAmount;
+        }
+
+        function convertToRUB() {
+            const kgsAmount = document.getElementById('kgsAmount').value;
+            const rubAmount = (kgsAmount * exchangeRate).toFixed(2);
+            document.getElementById('rubAmount').value = rubAmount;
+        }
+
+        getExchangeRate();
+    </script>
+    <style>
+        h1{
+            text-align: center;
+            font-size: 30pt;
+        }
+        .container {
+            margin: auto;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            width: 500px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            font-size: 20pt;
+            background-color: aliceblue;
+        }
+        .currency-input {
+            margin-bottom: 10px;
+        }
+        button{
+            font-size: 13pt;
+        }
+        .kyrg{
+            text-align: center;
+        }
+        img{
+            height: 215px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+              <li><a href="site.html">О компании</a></li>
+              <li><a href="news.html">Новости</a></li>
+              <li><a href="valute.html">Курс валют</a></li>
+              <li><a href="contacts.html">Контактные данные</a></li>
+              <li><a href="video.html">Видео</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <h1>Калькулятор валют (KGS-RUB)</h1>
+            <div class="currency-input">
+                <label for="rubAmount">Сумма в RUB:</label>
+                <input type="number" id="rubAmount" placeholder="Введите сумму в RUB">
+            </div>
+            <div class="currency-input">
+                <label for="kgsAmount">Сумма в KGS:</label>
+                <input type="number" id="kgsAmount" placeholder="Введите сумму в KGS">
+            </div>
+            <button onclick="convertToKGS()">Конвертировать в KGS</button>
+            <button onclick="convertToRUB()">Конвертировать в RUB</button>
+            <p id="exchangeRate"></p>
+        </div>
+        <div class="kyrg">
+            <img src="kgsrub.png">
+        </div>
+    </main>
+    <footer></footer>
+</body>
+</html>
